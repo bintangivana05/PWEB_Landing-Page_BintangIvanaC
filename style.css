@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#mainNav {
+  background: transparent;
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+#mainNav.scrolled {
+  background: rgba(13, 110, 253, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #6888ea;
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 50px;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 15s infinite;
+}
+
+.bubbles span:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.bubbles span:nth-child(2) {
+  left: 20%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+  animation-duration: 15s;
+}
+
+.bubbles span:nth-child(3) {
+  left: 30%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 4s;
+}
+
+.bubbles span:nth-child(4) {
+  left: 40%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.bubbles span:nth-child(5) {
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 6s;
+}
+
+.bubbles span:nth-child(6) {
+  left: 60%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 3s;
+  animation-duration: 13s;
+}
+
+.bubbles span:nth-child(7) {
+  left: 70%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 7s;
+}
+
+.bubbles span:nth-child(8) {
+  left: 80%;
+  width: 55px;
+  height: 55px;
+  animation-delay: 5s;
+  animation-duration: 16s;
+}
+
+.bubbles span:nth-child(9) {
+  left: 90%;
+  width: 75px;
+  height: 75px;
+  animation-delay: 1s;
+}
+
+.bubbles span:nth-child(10) {
+  left: 95%;
+  width: 65px;
+  height: 65px;
+  animation-delay: 8s;
+  animation-duration: 14s;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 110vh;
+    transform: translateX(100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(243, 202, 234, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.skills-container {
+  background: rgb(199, 215, 245);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+}
+
+.skill-bar.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.progress {
+  height: 10px;
+  border-radius: 10px;
+  background: #c8ddf3;
+}
+
+.progress-bar {
+  transition: width 1.5s ease;
+}
+
+.education-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.education-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.education-card i {
+  transition: all 0.3s;
+}
+
+.education-card:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.project-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s;
+  overflow: hidden;
+  background: rgb(194, 220, 241);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon i {
+  transition: all 0.3s;
+}
+
+.project-card:hover .project-icon i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+}
+
+.experience-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s;
+  background: rgb(197, 206, 248);
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.experience-card img {
+  height: 250px;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.experience-card:hover img {
+  transform: scale(1.05);
+}
+
+.contact-card {
+  text-decoration: none;
+  color: #333;
+  background: rgb(231, 207, 230);
+  transition: all 0.3s;
+  border: 2px solid #e9ecef;
+}
+
+.contact-card:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: rgb(249, 216, 243);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card i {
+  color: #667eea;
+  transition: all 0.3s;
+}
+
+.contact-card:hover i {
+  color: white;
+  transform: scale(1.2);
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s;
+}
+
+.contact-form .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.contact-form button {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  display: none;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+footer {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0 40px;
+  }
+
+  .hero-photo {
+    width: 140px;
+    height: 140px;}
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .project-card,
+  .experience-card,
+  .education-card {
+    margin-bottom: 1rem;
+  }
+}
+a, button, .card, img {
+  transition: all 0.3s ease;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
